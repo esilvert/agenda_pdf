@@ -1,0 +1,4 @@
+#!/usr/bin/env ruby
+require 'agenda_pdf'
+
+AgendaPdf.execute(ARGV)
