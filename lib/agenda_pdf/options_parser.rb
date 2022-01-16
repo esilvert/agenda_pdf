@@ -17,7 +17,7 @@ class OptionsParser
   end
 
   def month
-    @options[:month] || DateTime.now.month
+    @options[:month] || DateTime.now
   end
 
   def verbose
@@ -30,8 +30,8 @@ class OptionsParser
     OptionParser.new do |opts|
       opts.banner = "Usage: agenda_pdf [options]"
 
-      opts.on("-m", "--month", "Generates a pdf for current month") do |v|
-        @options[:month] = DateTime.parse(v) rescue DateTime.now.month
+      opts.on("-mMONTH", "--month=MONTH", "Generates a pdf for given month (ex: 2021-02-01)") do |v|
+        @options[:month] = DateTime.parse(v) rescue DateTime.now
       end
       
       opts.on("-o", "--path", "The output file path") do |v|

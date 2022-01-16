@@ -10,9 +10,6 @@ module AgendaPdf
   def self.execute(argv)
     options = OptionsParser.new
 
-    PdfGenerator.new(options.path) do
-      text 'hello world'
-      text argv.to_s
-    end
+    PdfGenerator.generate_month(options.month, path: options.path)
   end
 end
