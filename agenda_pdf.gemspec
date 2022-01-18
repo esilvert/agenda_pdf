@@ -33,12 +33,13 @@ Gem::Specification.new do |spec|
     `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
   end
   spec.bindir        = "bin"
-  spec.executables = ['agenda_pdf']
+  spec.executables = ['agenda_pdf'] 
   spec.require_paths = ["lib"]
 
   spec.add_development_dependency "bundler", "~> 2.2.22"
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "rspec", "~> 3.0"
+  spec.add_development_dependency "byebug", "~> 11.1"
 
   spec.add_dependency "prawn", "~> 2.4"
 end

@@ -7,6 +7,7 @@ PATH
 GEM
   remote: https://rubygems.org/
   specs:
+    byebug (11.1.3)
     diff-lcs (1.5.0)
     pdf-core (0.9.0)
     prawn (2.4.0)
@@ -26,7 +27,6 @@ GEM
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.10.0)
     rspec-support (3.10.3)
-    thor (1.2.1)
     ttfunk (1.7.0)
 
 PLATFORMS
@@ -35,10 +35,10 @@ PLATFORMS
 DEPENDENCIES
   agenda_pdf!
   bundler (~> 2.2.22)
+  byebug (~> 11.1)
   prawn (~> 2.4)
   rake (~> 10.0)
   rspec (~> 3.0)
-  thor (~> 1.2)
 
 RUBY VERSION
    ruby 3.0.2p107

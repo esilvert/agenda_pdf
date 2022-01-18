@@ -34,7 +34,7 @@ class OptionsParser
         @options[:month] = DateTime.parse(v) rescue DateTime.now
       end
       
-      opts.on("-o", "--path", "The output file path") do |v|
+      opts.on("-oPATH", "--path=PATH", "The output file path") do |v|
         @options[:path] = Pathname.new(v)
       end
       

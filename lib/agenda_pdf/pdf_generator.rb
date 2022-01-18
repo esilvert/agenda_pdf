@@ -1,11 +1,11 @@
 require 'prawn'
+require 'byebug'
 
 class PdfGenerator < Prawn::Document
   def initialize(path, &block)
-    super()
     initialize_document
 
-    instance_eval(&block)
+    super()
     
     finalize_document(path)
   end
@@ -17,13 +17,13 @@ class PdfGenerator < Prawn::Document
 
       start_date = DateTime.new(year, month)
       end_date = start_date.next_month
-      
+
       new(path) do
-        (start_date..end_date).each do |day|
+        (start_date...end_date).to_a.each do |day|
           text day.year.to_s
           text day.strftime('%b')
           text day.strftime('%a %d')
-          start_new_page unless day == end_date
+          start_new_page
         end    
       end
     end
